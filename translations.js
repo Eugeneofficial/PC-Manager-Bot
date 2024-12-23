@@ -43,9 +43,17 @@ const translations = {
             commandsTitle: "Basic Commands",
             settings: "Settings",
             settingsTitle: "Bot Settings",
-            security: "Security",
             securityTitle: "Security",
             securityDescription: "Security settings and access levels",
+            security: {
+                accessLevels: "Access Levels",
+                admin: "Administrator",
+                adminDesc: "full access to all functions",
+                user: "User",
+                userDesc: "basic commands and monitoring",
+                guest: "Guest",
+                guestDesc: "only view status"
+            },
             step1: "1. Installation",
             step1Description: "Download the latest version of the bot from our website and extract the archive to a convenient location.",
             step2: "2. Telegram Configuration",
@@ -65,15 +73,6 @@ const translations = {
                 command: "Send the command /newbot",
                 follow: "Follow the instructions to create the bot",
                 save: "Save the obtained token"
-            },
-            security: {
-                accessLevels: "Access Levels",
-                admin: "Administrator",
-                adminDesc: "full access to all functions",
-                user: "User",
-                userDesc: "basic commands and monitoring",
-                guest: "Guest",
-                guestDesc: "only view status"
             }
         },
         download: {
@@ -143,11 +142,19 @@ const translations = {
             gettingStartedTitle: "Начало работы с PC Manager Bot",
             commands: "Команды",
             commandsTitle: "Основные команды",
-            settings: "Настройка",
+            settings: "Настройки",
             settingsTitle: "Настройка бота",
-            security: "Безопасность",
             securityTitle: "Безопасность",
             securityDescription: "Настройки безопасности и уровни доступа",
+            security: {
+                accessLevels: "Уровни доступа",
+                admin: "Администратор",
+                adminDesc: "полный доступ ко всем функциям",
+                user: "Пользователь",
+                userDesc: "базовые команды и мониторинг",
+                guest: "Гость",
+                guestDesc: "только просмотр статуса"
+            },
             step1: "1. Установка",
             step1Description: "Скачайте последнюю версию бота с нашего сайта и распакуйте архив в удобное место.",
             step2: "2. Настройка Telegram",
@@ -167,15 +174,6 @@ const translations = {
                 command: "Отправьте команду /newbot",
                 follow: "Следуйте инструкциям для создания бота",
                 save: "Сохраните полученный токен"
-            },
-            security: {
-                accessLevels: "Уровни доступа",
-                admin: "Администратор",
-                adminDesc: "полный доступ ко всем функциям",
-                user: "Пользователь",
-                userDesc: "базовые команды и мониторинг",
-                guest: "Гость",
-                guestDesc: "только просмотр статуса"
             }
         },
         download: {
