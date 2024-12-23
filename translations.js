@@ -30,48 +30,41 @@ const translations = {
         docs: {
             title: "Documentation",
             gettingStarted: "Getting Started",
+            gettingStartedTitle: "Getting Started with PC Manager Bot",
             commands: "Commands",
+            commandsTitle: "Basic Commands",
             settings: "Settings",
+            settingsTitle: "Bot Settings",
             security: "Security",
-            installation: {
-                title: "Bot Installation",
-                step1: "Download the latest version from our website and extract the archive.",
-                downloadFile: "1. Download PC_Manager_Bot.zip",
-                extract: "2. Extract the archive",
-                run: "3. Run setup.exe"
-            },
-            telegramSetup: {
-                title: "Telegram Setup",
-                description: "Get your bot token from @BotFather in Telegram:",
-                steps: {
-                    find: "Find @BotFather in Telegram",
-                    command: "Send /newbot command",
-                    follow: "Follow instructions to create bot",
-                    save: "Save the received token"
-                }
-            },
-            firstLaunch: {
-                title: "First Launch",
-                description: "Enter the bot token and choose basic security settings on first launch."
-            }
+            securityTitle: "Security",
+            step1: "1. Installation",
+            step1Description: "Download the latest version of the bot from our website and extract the archive to a convenient location.",
+            step2: "2. Telegram Configuration",
+            step2Description: "Get the bot token from @BotFather in Telegram:",
+            step3: "3. First Launch",
+            step3Description: "When you first run it, specify the bot token and select the basic security settings.",
+            configurationFileDescription: "All settings are stored in the config.json file:",
+            warningDescription: "Never share your bot token with anyone!",
+            statusDescription: "Get the current status of the computer",
+            screenshotDescription: "Take a screenshot of the screen",
+            processesDescription: "List of active processes",
+            shutdownDescription: "Shutdown the computer",
+            webcamDescription: "Take a screenshot from the webcam",
+            messageDescription: "Send a message to the computer"
         },
         download: {
             title: "Download PC Manager Bot",
             version: "Version",
             lastUpdate: "Last update",
+            versionDescription: "Version {version} for Windows",
+            gettingInfo: "Getting information...",
+            downloadForWindows: "Download for Windows",
+            systemRequirementsTitle: "System Requirements:",
             features: {
                 control: "Full PC control via Telegram",
                 installation: "Easy installation",
                 security: "Data protection",
                 updates: "Automatic updates"
-            },
-            setup: "PC Manager Bot Setup",
-            forWindows: "for Windows",
-            fileSize: "Size",
-            downloadBtn: "Download for Windows",
-            systemReq: {
-                title: "System Requirements",
-                specs: "Windows 10/11, Python 3.8+"
             }
         },
         updates: {
@@ -113,48 +106,41 @@ const translations = {
         docs: {
             title: "Документация",
             gettingStarted: "Начало работы",
+            gettingStartedTitle: "Начало работы с PC Manager Bot",
             commands: "Команды",
+            commandsTitle: "Основные команды",
             settings: "Настройка",
+            settingsTitle: "Настройка бота",
             security: "Безопасность",
-            installation: {
-                title: "Установка бота",
-                step1: "Скачайте последнюю версию бота с нашего сайта и распакуйте архив в удобное место.",
-                downloadFile: "1. Скачайте PC_Manager_Bot.zip",
-                extract: "2. Распакуйте архив",
-                run: "3. Запустите setup.exe"
-            },
-            telegramSetup: {
-                title: "Настройка Telegram",
-                description: "Получите токен бота у @BotFather в Telegram:",
-                steps: {
-                    find: "Найдите @BotFather в Telegram",
-                    command: "Отправьте команду /newbot",
-                    follow: "Следуйте инструкциям для создания бота",
-                    save: "Сохраните полученный токен"
-                }
-            },
-            firstLaunch: {
-                title: "Первый запуск",
-                description: "При первом запуске укажите токен бота и выберите базовые настройки безопасности."
-            }
+            securityTitle: "Безопасность",
+            step1: "1. Установка",
+            step1Description: "Скачайте последнюю версию бота с нашего сайта и распакуйте архив в удобное место.",
+            step2: "2. Настройка Telegram",
+            step2Description: "Получите токен бота у @BotFather в Telegram:",
+            step3: "3. Первый запуск",
+            step3Description: "При первом запуске укажите токен бота и выберите базовые настройки безопасности.",
+            configurationFileDescription: "Все настройки хранятся в файле config.json:",
+            warningDescription: "Никогда не передавайте токен бота посторонним лицам!",
+            statusDescription: "Получить текущий статус компьютера",
+            screenshotDescription: "Сделать снимок экрана",
+            processesDescription: "Список активных процессов",
+            shutdownDescription: "Выключить компьютер",
+            webcamDescription: "Сделать снимок с веб-камеры",
+            messageDescription: "Отправить сообщение на компьютер"
         },
         download: {
             title: "Загрузить PC Manager Bot",
             version: "Версия",
             lastUpdate: "Последнее обновление",
+            versionDescription: "Версия {version} для Windows",
+            gettingInfo: "Получение информации...",
+            downloadForWindows: "Скачать для Windows",
+            systemRequirementsTitle: "Системные требования:",
             features: {
                 control: "Полное управление ПК через Telegram",
                 installation: "Простая установка",
                 security: "Защита данных",
                 updates: "Автоматические обновления"
-            },
-            setup: "PC Manager Bot Setup",
-            forWindows: "для Windows",
-            fileSize: "Размер",
-            downloadBtn: "Скачать для Windows",
-            systemReq: {
-                title: "Системные требования",
-                specs: "Windows 10/11, Python 3.8+"
             }
         },
         updates: {
