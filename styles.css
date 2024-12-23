@@ -776,4 +776,21 @@ ol, ul {
 .fa-spin {
     animation: spin 1s linear infinite;
 }
+
+.update-badge {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.update-badge i {
+    font-size: 0.9rem;
+    animation: spin 2s linear infinite;
+}
   

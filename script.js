@@ -1,35 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Получение информации о последней версии с GitHub
-    fetch('https://api.github.com/repos/Eugeneofficial/PC-Manager-Bot/releases/latest')
+    // Получение информации о релизах с GitHub
+    fetch('https://api.github.com/repos/Eugeneofficial/PC-Manager-Bot/releases')
         .then(response => response.json())
-        .then(data => {
-            // Обновляем информацию о версии
-            const versionElements = document.querySelectorAll('.version-info h3');
-            const versionInDownloadBox = document.querySelector('.download-box p');
-            const downloadButton = document.querySelector('.download-button');
-            const releaseDate = document.querySelector('.version-info p');
-
-            if (data.tag_name) {
-                const version = data.tag_name.replace('v', '');
-                versionElements.forEach(el => el.textContent = `Версия ${version}`);
-                versionInDownloadBox.textContent = `Версия ${version} для Windows`;
+        .then(releases => {
+            if (releases && releases.length > 0) {
+                // Берем последний релиз (первый в массиве)
+                const latestRelease = releases[0];
                 
-                // Обновляем ссылку на скачивание
-                if (data.assets && data.assets[0]) {
-                    downloadButton.href = data.assets[0].browser_download_url;
-                    // Обновляем размер файла
-                    const fileSizeElement = document.querySelector('.file-size');
-                    const fileSizeMB = (data.assets[0].size / 1048576).toFixed(1);
-                    fileSizeElement.textContent = `Размер: ${fileSizeMB} MB`;
-                }
+                // Обновляем информацию о версии
+                const versionElements = document.querySelectorAll('.version-info h3');
+                const versionInDownloadBox = document.querySelector('.download-box p');
+                const downloadButton = document.querySelector('.download-button');
+                const releaseDate = document.querySelector('.version-info p');
+                const fileSizeElement = document.querySelector('.file-size');
 
-                // Обновляем дату релиза
-                const releaseDateTime = new Date(data.published_at);
-                const options = { year: 'numeric', month: 'long' };
-                releaseDate.textContent = `Последнее обновление: ${releaseDateTime.toLocaleDateString('ru-RU', options)}`;
+                // Находим .exe файл в ассетах
+                const exeAsset = latestRelease.assets.find(asset => 
+                    asset.name.endsWith('.exe')
+                );
+
+                if (exeAsset) {
+                    // Обновляем версию
+                    const version = latestRelease.tag_name.replace('v', '');
+                    versionElements.forEach(el => el.textContent = `Версия ${version}`);
+                    versionInDownloadBox.textContent = `Версия ${version} для Windows`;
+                    
+                    // Обновляем ссылку на скачивание
+                    downloadButton.href = exeAsset.browser_download_url;
+                    
+                    // Обновляем размер файла
+                    const fileSizeMB = (exeAsset.size / 1048576).toFixed(1);
+                    fileSizeElement.innerHTML = `<span>Размер: ${fileSizeMB} MB</span>`;
+                    
+                    // Обновляем дату релиза
+                    const releaseDateTime = new Date(latestRelease.published_at);
+                    const options = { year: 'numeric', month: 'long' };
+                    releaseDate.textContent = `Последнее обновление: ${releaseDateTime.toLocaleDateString('ru-RU', options)}`;
+
+                    // Добавляем информацию о новой версии, если это обновление
+                    if (latestRelease.body && latestRelease.body.includes('FIX UPDATE')) {
+                        const updateBadge = document.createElement('div');
+                        updateBadge.className = 'update-badge';
+                        updateBadge.innerHTML = '<i class="fas fa-sync-alt"></i> Доступно обновление';
+                        downloadButton.parentNode.insertBefore(updateBadge, downloadButton);
+                    }
+                }
             }
         })
-        .catch(error => console.error('Ошибка при получении данных о релизе:', error));
+        .catch(error => {
+            console.error('Ошибка при получении данных о релизах:', error);
+            // Показываем сообщение об ошибке пользователю
+            const fileSizeElement = document.querySelector('.file-size');
+            fileSizeElement.innerHTML = '<span style="color: #ff5722;"><i class="fas fa-exclamation-triangle"></i> Ошибка загрузки данных</span>';
+        });
 
     // Анимация загрузки главной страницы
     setTimeout(() => {
