@@ -1,32 +1,33 @@
 # Changelog
 
-## [2.0.0] - 2023-09-14
+## [2.0.0] - 2024-12-24
 
 ### Added | Добавлено
-- 40+ new functions for system administrators | 40+ новых функций для системных администраторов
-- New keyboard layout with categories | Новая раскладка клавиатуры с категориями
-- System monitoring tools | Инструменты мониторинга системы
-- Network diagnostics | Диагностика сети
-- Security management | Управление безопасностью
-- Hardware control | Управление оборудованием
+- Plugin system support | Поддержка системы плагинов
+- New administrative functions | Новые административные функции
+- Extensive logging | Расширенное логирование
+- New UI controls | Новые элементы управления
+- System monitoring capabilities | Возможности мониторинга системы
 
 ### Changed | Изменено
 - Improved error handling | Улучшена обработка ошибок
-- Enhanced encoding support (UTF-8) | Улучшена поддержка кодировок (UTF-8)
-- Better camera and audio capture | Улучшена работа с камерой и звуком
-- Optimized command execution | Оптимизировано выполнение команд
+- Enhanced security features | Улучшена система безопасности
+- Updated dependencies | Обновлены зависимости
+- Refactored code structure | Переработана структура кода
+- Improved documentation | Улучшена документация
 
 ### Fixed | Исправлено
 - Encoding issues | Проблемы с кодировкой
-- Camera access errors | Ошибки досту��а к камере
-- Command output formatting | Форматирование вывода команд
-- Process monitoring accuracy | Точность мониторинга процессов
+- Camera initialization errors | Ошибки инициализации камеры
+- Audio recording bugs | Ошибки записи аудио
+- Permission handling | Обработка прав доступа
+- Configuration file issues | Проблемы с конфигурационным файлом
 
-## [1.0.0] - 2023-09-01
+## [1.0.1] - 2024-12-23
 
-### Initial Release | Первый релиз
-- Basic system monitoring | Базовый мониторинг системы
-- Screenshot capability | Возможность создания скриншотов
-- Power management | Управление питанием
-- File system access | Доступ к файловой системе
-- Process monitoring | Мониторинг процессов 
+### Added | Добавлено
+- Initial release | Первый релиз
+- Basic functionality | Базовый функционал
+- System monitoring | Мониторинг системы
+- File management | Управление файлами
+- Process control | Управление процессами 

@@ -1,23 +1,55 @@
-# Конфиденциальные данные
+# Конфигурационные файлы
 config.json
+*.log
 
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Виртуальное окружение
-venv/
+*.so
+.Python
 env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Логи
-*.log
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
 # Временные файлы
 *.tmp
 *.temp
-screenshot.png
+*.bak
+*.swp
+*.swo
 
-# IDE
-.vscode/
-.idea/
+# Медиафайлы
+*.jpg
+*.png
+*.wav
+*.mp3
+*.mp4
