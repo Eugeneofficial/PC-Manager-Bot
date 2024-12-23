@@ -1,5 +1,13 @@
 const translations = {
     en: {
+        meta: {
+            description: "PC Manager Bot - Remote PC control via Telegram. Secure computer control from anywhere in the world, system monitoring and command execution.",
+            keywords: "PC Manager Bot, remote control, Telegram bot, remote PC control, computer management, remote access, Windows control",
+            ogTitle: "PC Manager Bot - Remote PC Control via Telegram",
+            ogDescription: "Control your computer remotely through Telegram. Safe, fast, and convenient.",
+            twitterTitle: "PC Manager Bot - Remote PC Control",
+            twitterDescription: "Control your PC via Telegram from anywhere in the world"
+        },
         nav: {
             home: "Home",
             features: "Features",
@@ -93,6 +101,14 @@ const translations = {
         }
     },
     ru: {
+        meta: {
+            description: "PC Manager Bot - удаленное управление компьютером через Telegram. Безопасный контроль ПК из любой точки мира, мониторинг системы и выполнение команд.",
+            keywords: "PC Manager Bot, удаленное управление, Telegram бот, управление компьютером, удаленный доступ, контроль Windows",
+            ogTitle: "PC Manager Bot - Удаленное управление компьютером через Telegram",
+            ogDescription: "Управляйте своим компьютером удаленно через Telegram. Безопасно, быстро и удобно.",
+            twitterTitle: "PC Manager Bot - Удаленное управление ПК",
+            twitterDescription: "Управляйте компьютером через Telegram из любой точки мира"
+        },
         nav: {
             home: "Главная",
             features: "Возможности",
@@ -113,7 +129,7 @@ const translations = {
             },
             security: {
                 title: "Безопасность",
-                description: "Защищенное соединение и авторизация по��ьзователей"
+                description: "Защищенное соединение и авторизация пользователей"
             },
             customization: {
                 title: "Гибкая настройка",
@@ -135,7 +151,7 @@ const translations = {
             step2: "2. Настройка Telegram",
             step2Description: "Получите токен бота у @BotFather в Telegram:",
             step3: "3. Первый запуск",
-            step3Description: "При первом запуске укажите токен бота и в��берите базовые настройки безопасности.",
+            step3Description: "При первом запуске укажите токен бота и выберите базовые настройки безопасности.",
             configurationFileDescription: "Все настройки хранятся в файле config.json:",
             warningDescription: "Никогда не передавайте токен бота посторонним лицам!",
             statusDescription: "Получить текущий статус компьютера",
@@ -152,7 +168,7 @@ const translations = {
             },
             security: {
                 accessLevels: "Уровни доступа",
-                admin: "Администратор",
+                admin: "Админис��ратор",
                 adminDesc: "полный доступ ко всем функциям",
                 user: "Пользователь",
                 userDesc: "базовые команды и мониторинг",

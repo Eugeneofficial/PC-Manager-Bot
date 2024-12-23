@@ -1,15 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Функция для определения языка пользователя
     function getUserLanguage() {
+        // Проверяем сохраненный выбор
         const savedLang = localStorage.getItem('preferred_language');
-        if (savedLang) return savedLang;
+        if (savedLang && translations[savedLang]) {
+            return savedLang;
+        }
         
-        const browserLang = navigator.language.split('-')[0];
-        return translations[browserLang] ? browserLang : 'en';
+        // Проверяем язык браузера
+        const browserLang = navigator.language.toLowerCase().split('-')[0];
+        if (translations[browserLang]) {
+            return browserLang;
+        }
+        
+        // Проверяем все языки браузера
+        const languages = navigator.languages;
+        for (let lang of languages) {
+            const baseLang = lang.toLowerCase().split('-')[0];
+            if (translations[baseLang]) {
+                return baseLang;
+            }
+        }
+        
+        return 'ru'; // По умолчанию русский
     }
 
     // Функция для перевода всего контента
     function translatePage(lang) {
+        document.documentElement.lang = lang; // Обновляем язык документа
+        
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             const keys = key.split('.');
@@ -30,9 +49,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Обновляем мета-теги для SEO
+        const metaDescription = document.querySelector('meta[name="description"]');
+        const metaKeywords = document.querySelector('meta[name="keywords"]');
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+        
+        if (metaDescription) {
+            metaDescription.content = translations[lang].meta.description;
+        }
+        if (metaKeywords) {
+            metaKeywords.content = translations[lang].meta.keywords;
+        }
+        if (ogTitle) {
+            ogTitle.content = translations[lang].meta.ogTitle;
+        }
+        if (ogDescription) {
+            ogDescription.content = translations[lang].meta.ogDescription;
+        }
+        if (twitterTitle) {
+            twitterTitle.content = translations[lang].meta.twitterTitle;
+        }
+        if (twitterDescription) {
+            twitterDescription.content = translations[lang].meta.twitterDescription;
+        }
+
         // Обновляем активную кнопку языка
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang);
         });
 
         // Сохраняем выбор пользователя
