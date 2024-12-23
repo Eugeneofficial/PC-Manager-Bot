@@ -203,8 +203,16 @@ h1 {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
-    animation: float 3s ease-in-out infinite;
-    display: inline-block;
+    background: rgba(74, 144, 226, 0.1);
+    padding: 1rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover i {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+    background: rgba(74, 144, 226, 0.2);
 }
 
 h2 {
@@ -336,7 +344,14 @@ footer:before {
 }
 
 .docs-nav-item i {
-    width: 20px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .docs-nav-item:hover {
@@ -479,9 +494,9 @@ footer:before {
 }
 
 .warning-block i {
-    color: #FF5722;
     font-size: 1.5rem;
-    animation: rotateIn 1s ease-out;
+    color: #ff5722;
+    margin-right: 1rem;
 }
 
 ol, ul {
@@ -507,13 +522,13 @@ ol, ul {
   
 @keyframes float {
     0% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
     50% {
         transform: translateY(-10px);
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
 
@@ -641,7 +656,15 @@ ol, ul {
 }
 
 .features-list i {
+    font-size: 1.2rem;
     color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.1);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .download-box {
@@ -663,6 +686,9 @@ ol, ul {
     font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+    background: rgba(74, 144, 226, 0.1);
+    padding: 1rem;
+    border-radius: 50%;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -757,6 +783,8 @@ ol, ul {
 .loading-indicator {
     margin-right: 0.5rem;
     color: var(--primary-color);
+    font-size: 1.2rem;
+    animation: spin 1s linear infinite;
 }
 
 .file-size {
@@ -821,11 +849,12 @@ ol, ul {
 }
 
 .lang-btn img {
-    width: 20px;
-    height: 15px;
-    border-radius: 2px;
+    width: 24px;
+    height: 16px;
+    border-radius: 3px;
     object-fit: cover;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .lang-btn:hover {
