@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PC Manager Bot 🤖
 
 Telegram-бот для удаленного управления компьютером с Windows. Позволяет выполнять базовые операции и мониторинг системы через Telegram.
@@ -138,3 +139,6 @@ python build.py
 - [DearPyGui](https://github.com/hoffstadt/DearPyGui)
 - [PyArmor](https://github.com/dashingsoft/pyarmor)
 - [NSIS](https://nsis.sourceforge.io/)
+=======
+# PC-Manager-Bot
+>>>>>>> e12c7ad49855f509eba1d0cf3e399770b8e7c795
