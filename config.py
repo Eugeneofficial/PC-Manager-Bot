@@ -2,6 +2,10 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import json
 import os
+import logging
+
+# Настройка логгера
+logger = logging.getLogger(__name__)
 
 # Configuration file path
 CONFIG_FILE = "bot_profiles.json"
@@ -155,19 +159,33 @@ class ConfigApp:
                 pass
 
 def load_config():
-    """Load bot configuration from file"""
+    """Загрузка конфигурации с улучшенной обработкой ошибок"""
     try:
-        if os.path.exists(CONFIG_FILE):
-            with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-                # Get first profile's user IDs
-                first_profile = next(iter(config.values()))
-                PREMIUM_USERS = [int(uid) for uid in first_profile.get('user_ids', '').split(',') if uid]
-                return PREMIUM_USERS
-        return []
+        with open('config.json', 'r', encoding='utf-8') as f:
+            config = json.load(f)
+            
+        required_fields = ['TELEGRAM_TOKEN', 'AUTHORIZED_USERS']
+        for field in required_fields:
+            if field not in config:
+                raise ValueError(f"Missing required field: {field}")
+                
+        return config
+    except FileNotFoundError:
+        logger.error("Config file not found. Please create config.json")
+        # Создаем пример конфига
+        example_config = {
+            "TELEGRAM_TOKEN": "YOUR_BOT_TOKEN",
+            "AUTHORIZED_USERS": [123456789]
+        }
+        with open('config.json.example', 'w', encoding='utf-8') as f:
+            json.dump(example_config, f, indent=4)
+        return None
+    except json.JSONDecodeError:
+        logger.error("Invalid JSON in config file")
+        return None
     except Exception as e:
-        print(f"Error loading config: {e}")
-        return []
+        logger.error(f"Unexpected error loading config: {e}")
+        return None
 
 # Load premium users on module import
 PREMIUM_USERS = load_config()

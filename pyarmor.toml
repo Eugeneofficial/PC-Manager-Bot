@@ -1,0 +1,10 @@
+
+[build]
+output = build
+platform = windows.x86_64
+plugins = check_restrict,check_expiration
+cross_protection = 1
+restrict_mode = 1
+expire_date = 2025-01-22
+bind_data = BFEBFBFF000A0653-210991606402425
+    
