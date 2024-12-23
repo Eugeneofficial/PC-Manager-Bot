@@ -35,17 +35,6 @@
 - JavaScript (vanilla)
 - Font Awesome для иконок
 
-## 📥 Установка и запуск локально
-
-1. Клонируйте репозиторий:
-```bash
-git clone https://github.com/Eugeneofficial/PC-Manager-Bot.git
-```
-
-2. Откройте `index.html` в вашем браузере или используйте локальный сервер
-
-## 🌐 Онлайн версия
-
 Сайт доступен по адресу: [https://eugeneofficial.github.io/PC-Manager-Bot/](https://eugeneofficial.github.io/PC-Manager-Bot/)
 
 ## 📝 Лицензия
