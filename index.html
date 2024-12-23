@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Manager Bot - Управление компьютером через Telegram</title>
+    <title>PC Manager Bot - Remote PC Control via Telegram</title>
     <link rel="icon" type="image/x-icon" href="icon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,10 +16,14 @@
                 <span>PC Manager Bot</span>
             </div>
             <div class="nav-links">
-                <a href="#main">Главная</a>
-                <a href="#features">Возможности</a>
-                <a href="#docs">Документация</a>
-                <a href="#download" class="download-btn">Загрузить</a>
+                <a href="#main" data-i18n="nav.home">Home</a>
+                <a href="#features" data-i18n="nav.features">Features</a>
+                <a href="#docs" data-i18n="nav.docs">Documentation</a>
+                <a href="#download" class="download-btn" data-i18n="nav.download">Download</a>
+                <div class="language-switcher">
+                    <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+                    <button class="lang-btn" data-lang="ru">🇷🇺 RU</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -27,136 +31,136 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1>PC Manager Bot</h1>
-                <p>Управляйте своим компьютером из любой точки мира через Telegram</p>
+                <h1 data-i18n="hero.title">PC Manager Bot</h1>
+                <p data-i18n="hero.subtitle">Control your computer from anywhere in the world via Telegram</p>
                 <div class="cta-buttons">
-                    <a href="#download" class="primary-btn">Скачать сейчас</a>
-                    <a href="#docs" class="secondary-btn">Узнать больше</a>
+                    <a href="#download" class="primary-btn" data-i18n="hero.downloadNow">Download Now</a>
+                    <a href="#docs" class="secondary-btn" data-i18n="hero.learnMore">Learn More</a>
                 </div>
             </div>
         </section>
 
         <section id="features">
-            <h2>Особенности</h2>
+            <h2 data-i18n="features.title">Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <i class="fas fa-laptop-code"></i>
-                    <h3>Удаленное управление</h3>
-                    <p>Полный контроль над компьютером через удобный интерфейс Telegram</p>
+                    <h3 data-i18n="features.remoteControl">Remote Control</h3>
+                    <p data-i18n="features.remoteControlDescription">Full control over your computer through Telegram</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Безопасность</h3>
-                    <p>Защищенное соединение и авторизация пользователей</p>
+                    <h3 data-i18n="features.security">Security</h3>
+                    <p data-i18n="features.securityDescription">Secure connection and user authorization</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-cogs"></i>
-                    <h3>Гибкая настройка</h3>
-                    <p>Настраивайте команды и функции под свои потребности</p>
+                    <h3 data-i18n="features.customization">Customization</h3>
+                    <p data-i18n="features.customizationDescription">Customize commands and functions to your needs</p>
                 </div>
             </div>
         </section>
 
         <section id="docs" class="documentation">
-            <h2>Документация</h2>
+            <h2 data-i18n="docs.title">Documentation</h2>
             <div class="docs-container">
                 <div class="docs-nav">
                     <div class="docs-nav-item active" data-tab="getting-started">
                         <i class="fas fa-rocket"></i>
-                        Начало работы
+                        <span data-i18n="docs.gettingStarted">Getting Started</span>
                     </div>
                     <div class="docs-nav-item" data-tab="commands">
                         <i class="fas fa-terminal"></i>
-                        Команды бота
+                        <span data-i18n="docs.commands">Commands</span>
                     </div>
                     <div class="docs-nav-item" data-tab="settings">
                         <i class="fas fa-cog"></i>
-                        Настройка
+                        <span data-i18n="docs.settings">Settings</span>
                     </div>
                     <div class="docs-nav-item" data-tab="security">
                         <i class="fas fa-shield-alt"></i>
-                        Безопасность
+                        <span data-i18n="docs.security">Security</span>
                     </div>
                 </div>
                 
                 <div class="docs-content">
                     <div class="docs-tab active" id="getting-started">
-                        <h3>Начало работы с PC Manager Bot</h3>
+                        <h3 data-i18n="docs.gettingStartedTitle">Getting Started with PC Manager Bot</h3>
                         <div class="step">
-                            <h4>1. Установка бота</h4>
-                            <p>Скачайте последнюю версию бота с нашего сайта и распакуйте архив в удобное место.</p>
+                            <h4 data-i18n="docs.step1">1. Installation</h4>
+                            <p data-i18n="docs.step1Description">Download the latest version of the bot from our website and extract the archive to a convenient location.</p>
                             <div class="code-block">
                                 <code>
-                                    1. Скачайте PC_Manager_Bot.zip<br>
-                                    2. Распакуйте архив<br>
-                                    3. Запустите setup.exe
+                                    1. Download PC_Manager_Bot.zip<br>
+                                    2. Extract the archive<br>
+                                    3. Run setup.exe
                                 </code>
                             </div>
                         </div>
                         
                         <div class="step">
-                            <h4>2. Настройка Telegram</h4>
-                            <p>Получите токен бота у @BotFather в Telegram:</p>
+                            <h4 data-i18n="docs.step2">2. Telegram Configuration</h4>
+                            <p data-i18n="docs.step2Description">Get the bot token from @BotFather in Telegram:</p>
                             <ol>
-                                <li>Найдите @BotFather в Telegram</li>
-                                <li>Отправьте команду /newbot</li>
-                                <li>Следуйте инструкциям для создания бота</li>
-                                <li>Сохраните полученный токен</li>
+                                <li>Find @BotFather in Telegram</li>
+                                <li>Send the command /newbot</li>
+                                <li>Follow the instructions to create the bot</li>
+                                <li>Save the obtained token</li>
                             </ol>
                         </div>
 
                         <div class="step">
-                            <h4>3. Первый запуск</h4>
-                            <p>При первом запуске укажите токен бота и выберите базовые настройки безопасности.</p>
+                            <h4 data-i18n="docs.step3">3. First Run</h4>
+                            <p data-i18n="docs.step3Description">When you first run it, specify the bot token and select the basic security settings.</p>
                         </div>
                     </div>
 
                     <div class="docs-tab" id="commands">
-                        <h3>Основные команды</h3>
+                        <h3 data-i18n="docs.commandsTitle">Basic Commands</h3>
                         <div class="commands-grid">
                             <div class="command-card">
                                 <h4>/status</h4>
-                                <p>Получить текущий статус компьютера</p>
-                                <span class="badge">Базовая</span>
+                                <p data-i18n="docs.statusDescription">Get the current status of the computer</p>
+                                <span class="badge">Basic</span>
                             </div>
                             <div class="command-card">
                                 <h4>/screenshot</h4>
-                                <p>Сделать снимок экрана</p>
-                                <span class="badge">Базовая</span>
+                                <p data-i18n="docs.screenshotDescription">Take a screenshot of the screen</p>
+                                <span class="badge">Basic</span>
                             </div>
                             <div class="command-card">
                                 <h4>/processes</h4>
-                                <p>Список активных процессов</p>
-                                <span class="badge">Администратор</span>
+                                <p data-i18n="docs.processesDescription">List of active processes</p>
+                                <span class="badge">Administrator</span>
                             </div>
                             <div class="command-card">
                                 <h4>/shutdown</h4>
-                                <p>Выключить компьютер</p>
-                                <span class="badge">Администратор</span>
+                                <p data-i18n="docs.shutdownDescription">Shutdown the computer</p>
+                                <span class="badge">Administrator</span>
                             </div>
                             <div class="command-card">
                                 <h4>/webcam</h4>
-                                <p>Сделать снимок с веб-камеры</p>
-                                <span class="badge">Расширенная</span>
+                                <p data-i18n="docs.webcamDescription">Take a screenshot from the webcam</p>
+                                <span class="badge">Advanced</span>
                             </div>
                             <div class="command-card">
                                 <h4>/message</h4>
-                                <p>Отправить сообщение на компьютер</p>
-                                <span class="badge">Базовая</span>
+                                <p data-i18n="docs.messageDescription">Send a message to the computer</p>
+                                <span class="badge">Basic</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="docs-tab" id="settings">
-                        <h3>Настройка бота</h3>
+                        <h3 data-i18n="docs.settingsTitle">Bot Settings</h3>
                         <div class="settings-section">
-                            <h4>Конфигурационный файл</h4>
-                            <p>Все настройки хранятся в файле config.json:</p>
+                            <h4>Configuration File</h4>
+                            <p data-i18n="docs.configurationFileDescription">All settings are stored in the config.json file:</p>
                             <div class="code-block">
                                 <code>
                                     {<br>
-                                    &nbsp;&nbsp;"token": "ваш_токен_бота",<br>
-                                    &nbsp;&nbsp;"admin_id": "ваш_telegram_id",<br>
+                                    &nbsp;&nbsp;"token": "your_bot_token",<br>
+                                    &nbsp;&nbsp;"admin_id": "your_telegram_id",<br>
                                     &nbsp;&nbsp;"allowed_users": [],<br>
                                     &nbsp;&nbsp;"notifications": true,<br>
                                     &nbsp;&nbsp;"screenshot_quality": "high"<br>
@@ -167,17 +171,17 @@
                     </div>
 
                     <div class="docs-tab" id="security">
-                        <h3>Безопасность</h3>
+                        <h3 data-i18n="docs.securityTitle">Security</h3>
                         <div class="security-section">
-                            <h4>Уровни доступа</h4>
+                            <h4>Access Levels</h4>
                             <ul>
-                                <li><strong>Администратор</strong> - полный доступ ко всем функциям</li>
-                                <li><strong>Пользователь</strong> - базовые команды и мониторинг</li>
-                                <li><strong>Гость</strong> - только просмотр статуса</li>
+                                <li><strong>Administrator</strong> - full access to all functions</li>
+                                <li><strong>User</strong> - basic commands and monitoring</li>
+                                <li><strong>Guest</strong> - only view status</li>
                             </ul>
                             <div class="warning-block">
                                 <i class="fas fa-exclamation-triangle"></i>
-                                <p>Никогда не передавайте токен бота посторонним лицам!</p>
+                                <p data-i18n="docs.warningDescription">Never share your bot token with anyone!</p>
                             </div>
                         </div>
                     </div>
@@ -186,32 +190,32 @@
         </section>
 
         <section id="download" class="download-section">
-            <h2>Загрузить PC Manager Bot</h2>
+            <h2 data-i18n="download.title">Download PC Manager Bot</h2>
             <div class="download-container">
                 <div class="version-info">
-                    <h3>Версия 1.0.0</h3>
-                    <p>Последнее обновление: Декабрь 2024</p>
+                    <h3>Version 1.0.0</h3>
+                    <p data-i18n="download.lastUpdate">Last update: December 2024</p>
                     <ul class="features-list">
-                        <li><i class="fas fa-check"></i> Полное управление ПК через Telegram</li>
-                        <li><i class="fas fa-check"></i> Простая установка</li>
-                        <li><i class="fas fa-check"></i> Защита данных</li>
-                        <li><i class="fas fa-check"></i> Автоматические обновления</li>
+                        <li><i class="fas fa-check"></i> Full PC control via Telegram</li>
+                        <li><i class="fas fa-check"></i> Easy installation</li>
+                        <li><i class="fas fa-check"></i> Data protection</li>
+                        <li><i class="fas fa-check"></i> Automatic updates</li>
                     </ul>
                 </div>
                 <div class="download-box">
                     <i class="fas fa-download"></i>
                     <h4>PC Manager Bot Setup</h4>
-                    <p>Версия 1.0.0 для Windows</p>
+                    <p data-i18n="download.versionDescription">Version 1.0.0 for Windows</p>
                     <span class="file-size">
                         <i class="fas fa-sync fa-spin loading-indicator"></i>
-                        Получение информации...
+                        <span data-i18n="download.gettingInfo">Getting information...</span>
                     </span>
                     <a href="#" class="download-button">
                         <i class="fas fa-download"></i>
-                        <span>Скачать для Windows</span>
+                        <span data-i18n="download.downloadForWindows">Download for Windows</span>
                     </a>
                     <div class="system-requirements">
-                        <p><strong>Системные требования:</strong></p>
+                        <p data-i18n="download.systemRequirementsTitle"><strong>System Requirements:</strong></p>
                         <p>Windows 10/11, Python 3.8+</p>
                     </div>
                 </div>
@@ -220,11 +224,12 @@
 
         <footer>
             <div class="footer-content">
-                <p>&copy; 2024 PC Manager Bot. Все права защищены.</p>
+                <p data-i18n="footer.copyright">© 2024 PC Manager Bot. All rights reserved.</p>
             </div>
         </footer>
     </main>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

@@ -793,4 +793,40 @@ ol, ul {
     font-size: 0.9rem;
     animation: spin 2s linear infinite;
 }
+
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-btn.active {
+    background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background: var(--card-bg);
+        padding: 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+}
   

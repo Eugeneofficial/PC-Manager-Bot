@@ -1,47 +1,96 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Функция для определения языка пользователя
+    function getUserLanguage() {
+        const savedLang = localStorage.getItem('preferred_language');
+        if (savedLang) return savedLang;
+        
+        const browserLang = navigator.language.split('-')[0];
+        return translations[browserLang] ? browserLang : 'en';
+    }
+
+    // Функция для перевода всего контента
+    function translatePage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const keys = key.split('.');
+            let translation = translations[lang];
+            
+            for (const k of keys) {
+                if (translation) {
+                    translation = translation[k];
+                }
+            }
+            
+            if (translation) {
+                if (element.tagName === 'INPUT' && element.type === 'placeholder') {
+                    element.placeholder = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+
+        // Обновляем активную кнопку языка
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+
+        // Сохраняем выбор пользователя
+        localStorage.setItem('preferred_language', lang);
+    }
+
+    // Инициализация переводов
+    const currentLang = getUserLanguage();
+    translatePage(currentLang);
+
+    // Обработчики для кнопок переключения языка
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            translatePage(lang);
+        });
+    });
+
     // Получение информации о релизах с GitHub
     fetch('https://api.github.com/repos/Eugeneofficial/PC-Manager-Bot/releases')
         .then(response => response.json())
         .then(releases => {
             if (releases && releases.length > 0) {
-                // Берем последний релиз (первый в массиве)
                 const latestRelease = releases[0];
                 
-                // Обновляем информацию о версии
                 const versionElements = document.querySelectorAll('.version-info h3');
                 const versionInDownloadBox = document.querySelector('.download-box p');
                 const downloadButton = document.querySelector('.download-button');
                 const releaseDate = document.querySelector('.version-info p');
                 const fileSizeElement = document.querySelector('.file-size');
 
-                // Находим .exe файл в ассетах
                 const exeAsset = latestRelease.assets.find(asset => 
                     asset.name.endsWith('.exe')
                 );
 
                 if (exeAsset) {
-                    // Обновляем версию
                     const version = latestRelease.tag_name.replace('v', '');
-                    versionElements.forEach(el => el.textContent = `Версия ${version}`);
-                    versionInDownloadBox.textContent = `Версия ${version} для Windows`;
+                    const currentLang = localStorage.getItem('preferred_language') || getUserLanguage();
                     
-                    // Обновляем ссылку на скачивание
+                    versionElements.forEach(el => {
+                        el.textContent = `${translations[currentLang].download.version} ${version}`;
+                    });
+                    
+                    versionInDownloadBox.textContent = `${translations[currentLang].download.version} ${version} ${translations[currentLang].download.forWindows}`;
+                    
                     downloadButton.href = exeAsset.browser_download_url;
                     
-                    // Обновляем размер файла
                     const fileSizeMB = (exeAsset.size / 1048576).toFixed(1);
-                    fileSizeElement.innerHTML = `<span>Размер: ${fileSizeMB} MB</span>`;
+                    fileSizeElement.innerHTML = `<span>${translations[currentLang].download.fileSize}: ${fileSizeMB} MB</span>`;
                     
-                    // Обновляем дату релиза
                     const releaseDateTime = new Date(latestRelease.published_at);
                     const options = { year: 'numeric', month: 'long' };
-                    releaseDate.textContent = `Последнее обновление: ${releaseDateTime.toLocaleDateString('ru-RU', options)}`;
+                    releaseDate.textContent = `${translations[currentLang].download.lastUpdate}: ${releaseDateTime.toLocaleDateString(currentLang === 'ru' ? 'ru-RU' : 'en-US', options)}`;
 
-                    // Добавляем информацию о новой версии, если это обновление
                     if (latestRelease.body && latestRelease.body.includes('FIX UPDATE')) {
                         const updateBadge = document.createElement('div');
                         updateBadge.className = 'update-badge';
-                        updateBadge.innerHTML = '<i class="fas fa-sync-alt"></i> Доступно обновление';
+                        updateBadge.innerHTML = `<i class="fas fa-sync-alt"></i> ${translations[currentLang].updates.available}`;
                         downloadButton.parentNode.insertBefore(updateBadge, downloadButton);
                     }
                 }
@@ -49,9 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Ошибка при получении данных о релизах:', error);
-            // Показываем сообщение об ошибке пользователю
             const fileSizeElement = document.querySelector('.file-size');
-            fileSizeElement.innerHTML = '<span style="color: #ff5722;"><i class="fas fa-exclamation-triangle"></i> Ошибка загрузки данных</span>';
+            const currentLang = localStorage.getItem('preferred_language') || getUserLanguage();
+            fileSizeElement.innerHTML = `<span style="color: #ff5722;"><i class="fas fa-exclamation-triangle"></i> ${translations[currentLang].updates.error}</span>`;
         });
 
     // Анимация загрузки главной страницы
