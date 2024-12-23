@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Manager Bot - Управление компьютером через Telegram</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="PC Manager Bot Logo">
+                <span>PC Manager Bot</span>
+            </div>
+            <div class="nav-links">
+                <a href="#main">Главная</a>
+                <a href="#features">Возможности</a>
+                <a href="#docs">Документация</a>
+                <a href="#download" class="download-btn">Загрузить</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>PC Manager Bot</h1>
+                <p>Управляйте своим компьютером из любой точки мира через Telegram</p>
+                <div class="cta-buttons">
+                    <a href="#download" class="primary-btn">Скачать сейчас</a>
+                    <a href="#docs" class="secondary-btn">Узнать больше</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Особенности</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Удаленное управление</h3>
+                    <p>Полный контроль над компьютером через удобный интерфейс Telegram</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Безопасность</h3>
+                    <p>Защищенное соединение и авторизация пользователей</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Гибкая настройка</h3>
+                    <p>Настраивайте команды и функции под свои потребности</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="docs" class="documentation">
+            <h2>Документация</h2>
+            <div class="docs-container">
+                <div class="docs-nav">
+                    <div class="docs-nav-item active" data-tab="getting-started">
+                        <i class="fas fa-rocket"></i>
+                        Начало работы
+                    </div>
+                    <div class="docs-nav-item" data-tab="commands">
+                        <i class="fas fa-terminal"></i>
+                        Команды бота
+                    </div>
+                    <div class="docs-nav-item" data-tab="settings">
+                        <i class="fas fa-cog"></i>
+                        Настройка
+                    </div>
+                    <div class="docs-nav-item" data-tab="security">
+                        <i class="fas fa-shield-alt"></i>
+                        Безопасность
+                    </div>
+                </div>
+                
+                <div class="docs-content">
+                    <div class="docs-tab active" id="getting-started">
+                        <h3>Начало работы с PC Manager Bot</h3>
+                        <div class="step">
+                            <h4>1. Установка бота</h4>
+                            <p>Скачайте последнюю версию бота с нашего сайта и распакуйте архив в удобное место.</p>
+                            <div class="code-block">
+                                <code>
+                                    1. Скачайте PC_Manager_Bot.zip<br>
+                                    2. Распакуйте архив<br>
+                                    3. Запустите setup.exe
+                                </code>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <h4>2. Настройка Telegram</h4>
+                            <p>Получите токен бота у @BotFather в Telegram:</p>
+                            <ol>
+                                <li>Найдите @BotFather в Telegram</li>
+                                <li>Отправьте команду /newbot</li>
+                                <li>Следуйте инструкциям для создания бота</li>
+                                <li>Сохраните полученный токен</li>
+                            </ol>
+                        </div>
+
+                        <div class="step">
+                            <h4>3. Первый запуск</h4>
+                            <p>При первом запуске укажите токен бота и выберите базовые настройки безопасности.</p>
+                        </div>
+                    </div>
+
+                    <div class="docs-tab" id="commands">
+                        <h3>Основные команды</h3>
+                        <div class="commands-grid">
+                            <div class="command-card">
+                                <h4>/status</h4>
+                                <p>Получить текущий статус компьютера</p>
+                                <span class="badge">Базовая</span>
+                            </div>
+                            <div class="command-card">
+                                <h4>/screenshot</h4>
+                                <p>Сделать снимок экрана</p>
+                                <span class="badge">Базовая</span>
+                            </div>
+                            <div class="command-card">
+                                <h4>/processes</h4>
+                                <p>Список активных процессов</p>
+                                <span class="badge">Администратор</span>
+                            </div>
+                            <div class="command-card">
+                                <h4>/shutdown</h4>
+                                <p>Выключить компьютер</p>
+                                <span class="badge">Администратор</span>
+                            </div>
+                            <div class="command-card">
+                                <h4>/webcam</h4>
+                                <p>Сделать снимок с веб-камеры</p>
+                                <span class="badge">Расширенная</span>
+                            </div>
+                            <div class="command-card">
+                                <h4>/message</h4>
+                                <p>Отправить сообщение на компьютер</p>
+                                <span class="badge">Базовая</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="docs-tab" id="settings">
+                        <h3>Настройка бота</h3>
+                        <div class="settings-section">
+                            <h4>Конфигурационный файл</h4>
+                            <p>Все настройки хранятся в файле config.json:</p>
+                            <div class="code-block">
+                                <code>
+                                    {<br>
+                                    &nbsp;&nbsp;"token": "ваш_токен_бота",<br>
+                                    &nbsp;&nbsp;"admin_id": "ваш_telegram_id",<br>
+                                    &nbsp;&nbsp;"allowed_users": [],<br>
+                                    &nbsp;&nbsp;"notifications": true,<br>
+                                    &nbsp;&nbsp;"screenshot_quality": "high"<br>
+                                    }
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="docs-tab" id="security">
+                        <h3>Безопасность</h3>
+                        <div class="security-section">
+                            <h4>Уровни доступа</h4>
+                            <ul>
+                                <li><strong>Администратор</strong> - полный доступ ко всем функциям</li>
+                                <li><strong>Пользователь</strong> - базовые команды и мониторинг</li>
+                                <li><strong>Гость</strong> - только просмотр статуса</li>
+                            </ul>
+                            <div class="warning-block">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p>Никогда не передавайте токен бота посторонним лицам!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 PC Manager Bot. Все права защищены.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,399 @@
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2ECC71;
+    --dark-bg: #1a1a1a;
+    --light-text: #ffffff;
+    --card-bg: #2a2a2a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: var(--dark-bg);
+    color: var(--light-text);
+}
+
+header {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    opacity: 0;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    opacity: 0;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a.animated {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.download-btn {
+    background: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--dark-bg), #2a2a2a);
+}
+
+.hero-content {
+    max-width: 800px;
+    opacity: 0;
+}
+
+.hero-content.animated {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-content h1.animated {
+    animation: fadeInUp 0.8s ease forwards 0.3s;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.cta-buttons.animated {
+    animation: fadeInUp 0.8s ease forwards 0.9s;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.secondary-btn {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    transform: translateY(-3px);
+}
+
+#features {
+    padding: 5rem 2rem;
+    background: var(--card-bg);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+footer {
+    background: var(--dark-bg);
+    padding: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-content p {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-content p.animated {
+    animation: fadeInUp 0.8s ease forwards 0.6s;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+}
+
+.logo.animated {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.nav-links a.animated {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.logo.animated {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Документация */
+.documentation {
+    padding: 5rem 2rem;
+    background: var(--dark-bg);
+}
+
+.docs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.docs-nav {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem 0;
+}
+
+.docs-nav-item {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.docs-nav-item i {
+    width: 20px;
+}
+
+.docs-nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.docs-nav-item.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.docs-content {
+    padding: 2rem;
+}
+
+.docs-tab {
+    display: none;
+}
+
+.docs-tab.active {
+    display: block;
+}
+
+.step {
+    margin-bottom: 2rem;
+}
+
+.step h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.code-block {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-family: monospace;
+}
+
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.command-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.command-card:hover {
+    transform: translateY(-5px);
+}
+
+.command-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+}
+
+.warning-block {
+    background: rgba(255, 87, 34, 0.1);
+    border-left: 4px solid #FF5722;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.warning-block i {
+    color: #FF5722;
+    font-size: 1.5rem;
+}
+
+ol, ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .docs-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .docs-nav {
+        display: flex;
+        overflow-x: auto;
+        padding: 1rem;
+    }
+    
+    .docs-nav-item {
+        white-space: nowrap;
+    }
+}
+  
