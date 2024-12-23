@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and databases
+*.log
+*.sqlite
+logs/
+
+# Local configuration
+config.json
+.env
+
+# Screenshots and temporary files
+screenshots/
+downloads/
+temp/
+*.tmp
+
+# PyInstaller
+*.spec
+*.manifest
+
+# PyArmor
+.pyarmor_config
+pyarmor.toml
+pyarmor.cfg
+dist/
+build/
+
+# Windows specific
+Thumbs.db
+desktop.ini
+
+# Project specific
+icon.ico 

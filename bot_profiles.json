@@ -1,0 +1,16 @@
+{
+    "default": {
+        "token": "7981633226:AAGUwyOUihcppNiZcZCx-fHG7pm0mW6jDQM",
+        "user_ids": "632949773",
+        "premium": true,
+        "premium_features": {
+            "remote_desktop": false,
+            "file_transfer": false,
+            "process_manager": false,
+            "system_info": false
+        }
+    },
+    "632949773": {
+        "language": "ru"
+    }
+}
