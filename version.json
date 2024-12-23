@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "version": "1.0.0",
     "download_url": "https://github.com/Eugeneofficial/PC-Manager-Bot/releases/latest",
@@ -6,4 +7,14 @@
         "Базовый функционал управления ПК",
         "Поддержка русского и английского языков"
     ]
+=======
+{
+    "version": "1.0.0",
+    "download_url": "https://github.com/Eugeneofficial/PC-Manager-Bot/releases/latest",
+    "changes": [
+        "Первый релиз",
+        "Базовый функционал управления ПК",
+        "Поддержка русского и английского языков"
+    ]
+>>>>>>> 4a2158eae29156bfea48671517f22afb744bd931
 } 
