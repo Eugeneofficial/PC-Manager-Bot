@@ -1,4 +1,6 @@
 {
-    "TELEGRAM_TOKEN": "",
-    "AUTHORIZED_USERS": []
-} 
+    "TELEGRAM_TOKEN": "YOUR_BOT_TOKEN_HERE",
+    "AUTHORIZED_USERS": [
+        123456789
+    ]
+}
