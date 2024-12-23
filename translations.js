@@ -50,7 +50,22 @@ const translations = {
             processesDescription: "List of active processes",
             shutdownDescription: "Shutdown the computer",
             webcamDescription: "Take a screenshot from the webcam",
-            messageDescription: "Send a message to the computer"
+            messageDescription: "Send a message to the computer",
+            telegramSetup: {
+                find: "Find @BotFather in Telegram",
+                command: "Send the command /newbot",
+                follow: "Follow the instructions to create the bot",
+                save: "Save the obtained token"
+            },
+            security: {
+                accessLevels: "Access Levels",
+                admin: "Administrator",
+                adminDesc: "full access to all functions",
+                user: "User",
+                userDesc: "basic commands and monitoring",
+                guest: "Guest",
+                guestDesc: "only view status"
+            }
         },
         download: {
             title: "Download PC Manager Bot",
@@ -65,7 +80,9 @@ const translations = {
                 installation: "Easy installation",
                 security: "Data protection",
                 updates: "Automatic updates"
-            }
+            },
+            setup: "PC Manager Bot Setup",
+            systemRequirementsSpecs: "Windows 10/11, Python 3.8+"
         },
         updates: {
             available: "Update Available",
@@ -96,7 +113,7 @@ const translations = {
             },
             security: {
                 title: "Безопасность",
-                description: "Защищенное соединение и авторизация пользователей"
+                description: "Защищенное соединение и авторизация по��ьзователей"
             },
             customization: {
                 title: "Гибкая настройка",
@@ -118,7 +135,7 @@ const translations = {
             step2: "2. Настройка Telegram",
             step2Description: "Получите токен бота у @BotFather в Telegram:",
             step3: "3. Первый запуск",
-            step3Description: "При первом запуске укажите токен бота и выберите базовые настройки безопасности.",
+            step3Description: "При первом запуске укажите токен бота и в��берите базовые настройки безопасности.",
             configurationFileDescription: "Все настройки хранятся в файле config.json:",
             warningDescription: "Никогда не передавайте токен бота посторонним лицам!",
             statusDescription: "Получить текущий статус компьютера",
@@ -126,7 +143,22 @@ const translations = {
             processesDescription: "Список активных процессов",
             shutdownDescription: "Выключить компьютер",
             webcamDescription: "Сделать снимок с веб-камеры",
-            messageDescription: "Отправить сообщение на компьютер"
+            messageDescription: "Отправить сообщение на компьютер",
+            telegramSetup: {
+                find: "Найдите @BotFather в Telegram",
+                command: "Отправьте команду /newbot",
+                follow: "Следуйте инструкциям для создания бота",
+                save: "Сохраните полученный токен"
+            },
+            security: {
+                accessLevels: "Уровни доступа",
+                admin: "Администратор",
+                adminDesc: "полный доступ ко всем функциям",
+                user: "Пользователь",
+                userDesc: "базовые команды и мониторинг",
+                guest: "Гость",
+                guestDesc: "только просмотр статуса"
+            }
         },
         download: {
             title: "Загрузить PC Manager Bot",
@@ -141,7 +173,9 @@ const translations = {
                 installation: "Простая установка",
                 security: "Защита данных",
                 updates: "Автоматические обновления"
-            }
+            },
+            setup: "Установка PC Manager Bot",
+            systemRequirementsSpecs: "Windows 10/11, Python 3.8+"
         },
         updates: {
             available: "Доступно обновление",
